@@ -610,7 +610,7 @@ public class IdentityBrokerService implements IdentityProvider.AuthenticationCal
                 migrateFederatedIdentityId(context, federatedUser);
             }
             authenticationSession.setAuthenticatedUser(federatedUser);
-
+            authenticationSession.setAuthNote("remember_me", "true");
             return finishOrRedirectToPostBrokerLogin(authenticationSession, context, false);
         }
     }
